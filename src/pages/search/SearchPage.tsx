@@ -1,10 +1,20 @@
 import { useLoaderData } from "react-router-dom";
-import type { PackageSummary } from "../../api/types/PackageSummary";
 import { SearchLoaderResult } from "./searchLoader";
+import { PackageListItem } from "../../components/PackageListItem";
 
 export default function SearchPage() {
-  const data = useLoaderData() as SearchLoaderResult;
+  const { searchResults } = useLoaderData() as SearchLoaderResult;
 
-  console.log(data);
-  return <div className="search">Search</div>;
+  return (
+    <div className="search-page">
+      <h2 className="h2">Search Results</h2>
+      <div className="search">
+        {searchResults
+          ? searchResults.map((item) => {
+              return <PackageListItem pack={item} key={item.name} />;
+            })
+          : ""}
+      </div>
+    </div>
+  );
 }

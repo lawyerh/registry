@@ -8,7 +8,8 @@ export default function RegistrySearch() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    navigate(`/search?term=${term}`)
+    navigate(`/search?term=${term}`);
+    setTerm("");
   };
   return (
     <form onSubmit={handleSubmit} className="search_form">
