@@ -1,6 +1,6 @@
 export interface PackageDetails {
   name: string;
-  author: {
+  author?: {
     name: string;
     email: string;
   }
