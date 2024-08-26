@@ -18,6 +18,7 @@ const router = createBrowserRouter([
         path: "/search",
         element: <SearchPage />,
         loader: searchLoader,
+        errorElement: <p>Must include a search term!</p>,
       },
       {
         path: "/packages/:name",

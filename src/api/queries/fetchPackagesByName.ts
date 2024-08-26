@@ -11,7 +11,7 @@ interface SearchResponse {
   }[];
 }
 
-export default async function fetchPackageByName(
+export default async function fetchPackagesByName(
   term: string
 ): Promise<PackageSummary[]> {
   const res = await fetch(
