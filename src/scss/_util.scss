@@ -13,3 +13,45 @@ $layout-radius: 0.3rem;
 .bold {
   font-weight: bold;
 }
+
+.scroller {
+  max-width: 60rem;
+  border: 3px solid lime;
+
+  &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-block: 1rem;
+    padding-inline: 0;
+  }
+  &.animated {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      $slate 20%,
+      $slate 80%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      $slate 20%,
+      $slate 80%,
+      transparent
+    );
+  }
+
+  &.animated &__inner {
+    width: min-content;
+    flex-wrap: nowrap;
+    animation: scroll 60s linear infinite;
+  }
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(-50%);
+  }
+}

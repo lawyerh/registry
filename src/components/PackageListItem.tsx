@@ -6,6 +6,14 @@ interface PackageListItemProps {
 }
 
 export function PackageListItem({ pack }: PackageListItemProps) {
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  }
+
+  // check if scroller is wider than page width before adding animation
+  const checkMotionPref = (): boolean => {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  };
+
   return (
     <div className="result">
       <div className="result__container">
@@ -22,14 +30,16 @@ export function PackageListItem({ pack }: PackageListItemProps) {
         </Link>
       </div>
 
-      <ul className="result__list">
-        {pack.keywords &&
-          pack.keywords.map((item) => (
-            <li key={item} className="result__list-item">
-              {item}
-            </li>
-          ))}
-      </ul>
+      <div className={`scroller ${!checkMotionPref() && "animated"}`}>
+        <ul className="result__list scroller__inner">
+          {pack.keywords &&
+            pack.keywords.map((item) => (
+              <li key={item} className="result__list-item">
+                {item}
+              </li>
+            ))}
+        </ul>
+      </div>
     </div>
   );
 }
