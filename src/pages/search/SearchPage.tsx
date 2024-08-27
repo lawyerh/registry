@@ -7,7 +7,7 @@ export default function SearchPage() {
 
   return (
     <div className="search-page">
-      <h2 className="h2">Search Results</h2>
+      <h2 className="h2">Search Results:</h2>
       <div className="search">
         {searchResults
           ? searchResults.map((item) => {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import SearchIcon from "./icons/SearchIcon";
 
 export default function RegistrySearch() {
   const [term, setTerm] = useState("");
@@ -12,8 +13,10 @@ export default function RegistrySearch() {
     setTerm("");
   };
   return (
-    <form onSubmit={handleSubmit} className="search_form">
-      <button className="search_submit">GO</button>
+    <form onSubmit={handleSubmit} className="search__form">
+      <button className="search__submit">
+        <SearchIcon styling="search__icon" />
+      </button>
       <input
         value={term}
         onChange={(e) => {

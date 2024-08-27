@@ -1,0 +1,30 @@
+.app {
+  padding: 3rem;
+  background-color: $thistle;
+  min-height: 100dvh;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  background-color: $celeste;
+  padding: 2rem;
+  border: 2px solid $slate;
+  border-top-left-radius: $layout-radius;
+  border-top-right-radius: $layout-radius;
+}
+
+.home-page {
+  background-color: $slate;
+  min-height: 40rem;
+  padding: 2rem;
+  color: white;
+}
+
+.search-page {
+  background-color: $slate;
+  padding: 2rem;
+}
+
+.details-page {
+}

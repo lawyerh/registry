@@ -12,6 +12,9 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-size: 62.5%;
+  font-size: 1.4rem;
+  font-family: monospace;
+  font-weight: 300;
 }
 
 img,
@@ -46,8 +49,8 @@ h6 {
 }
 
 // Generated with coolors app
-$thistle : #F0D3F7;
-$slate: #69747C;
-$tomato: #FE5E41;
-$emerald: #4CB963;
-$celeste: #ADF5FF;
+$thistle: #f0d3f7;
+$slate: #69747c;
+$tomato: #fe5e41;
+$emerald: #4cb963;
+$celeste: #adf5ff;

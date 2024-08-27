@@ -1,0 +1,15 @@
+$layout-radius: 0.3rem;
+
+.h2 {
+  font-size: 2rem;
+  color: $tomato;
+  width: fit-content;
+  padding: 0 1rem;
+  filter: drop-shadow(0 0 3px $tomato);
+  border-bottom: thick double $tomato;
+  border-radius: 0.5rem;
+}
+
+.bold {
+  font-weight: bold;
+}

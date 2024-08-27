@@ -5,7 +5,7 @@ export default function DetailsPage() {
   const { data } = useLoaderData() as DetailsLoaderResult;
 
   return (
-    <div className="details">
+    <div className="details-page">
       <div className="details__container">
         <p className="details__title">{data.name}</p>
         <p className="details__text">{data.description}</p>
@@ -18,7 +18,7 @@ export default function DetailsPage() {
         {!data.author && <p className="details__text">Unknown</p>}
       </div>
 
-      <div className="detasils__container">
+      <div className="details__container">
         <p className="details__label">License:</p>
         <p className="details__text">{data.license}</p>
       </div>
