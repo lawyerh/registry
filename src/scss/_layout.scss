@@ -1,6 +1,8 @@
 .app {
-  padding: 3rem;
-  background-color: $thistle;
+  @media (min-width: $medium-screen) {
+    padding: 3rem;
+    background-color: $thistle;
+  }
   min-height: 100dvh;
 }
 
@@ -12,6 +14,11 @@
   border: 2px solid $slate;
   border-top-left-radius: $layout-radius;
   border-top-right-radius: $layout-radius;
+
+  @media (max-width: $medium-screen) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .home-page {
@@ -24,6 +31,12 @@
 .search-page {
   background-color: $slate;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (max-width: $medium-screen) {
+    padding: 1rem;
+  }
 }
 
 .details-page {

@@ -7,7 +7,7 @@ export default function DetailsPage() {
   return (
     <div className="details-page">
       <div className="details__container">
-        <p className="details__title">{data.name}</p>
+        <p className="title">{data.name}</p>
         <p className="details__text">{data.description}</p>
       </div>
 

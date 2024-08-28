@@ -6,40 +6,34 @@ interface PackageListItemProps {
 }
 
 export function PackageListItem({ pack }: PackageListItemProps) {
-  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  }
-
-  // check if scroller is wider than page width before adding animation
-  const checkMotionPref = (): boolean => {
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  };
-
   return (
     <div className="result">
       <div className="result__container">
         <div className="result__info">
-          <p className="result__title">
-            <span className="bold">{pack.name}</span>
-            <span className="result__version"> || -v {pack.version}</span>
-          </p>
-          <p className="result__description">{pack.description}</p>
+          <p className="title bold">{pack.name}</p>
+          <p className="result__version"> || -v {pack.version}</p>
+          <p className="text">{pack.description}</p>
         </div>
 
         <Link className="link result__link" to={`/packages/${pack.name}`}>
-          VIEW {pack.name.toUpperCase()}
+          VIEW {pack.name.toUpperCase()} &rarr;
         </Link>
       </div>
 
-      <div className={`scroller ${!checkMotionPref() && "animated"}`}>
-        <ul className="result__list scroller__inner">
-          {pack.keywords &&
-            pack.keywords.map((item) => (
-              <li key={item} className="result__list-item">
-                {item}
-              </li>
-            ))}
-        </ul>
-      </div>
+      <ul className="result__list">
+        <p className="text">Keywords:</p>
+        {pack.keywords ? (
+          pack.keywords.map((item) => (
+            <li key={item} className="result__list-item">
+              {item}
+            </li>
+          ))
+        ) : (
+          <p className="title">
+            <span className="text bold">none</span>
+          </p>
+        )}
+      </ul>
     </div>
   );
 }
