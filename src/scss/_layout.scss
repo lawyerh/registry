@@ -1,9 +1,9 @@
 .app {
+  min-height: 100dvh;
   @media (min-width: $medium-screen) {
     padding: 3rem;
     background-color: $thistle;
   }
-  min-height: 100dvh;
 }
 
 .header {
